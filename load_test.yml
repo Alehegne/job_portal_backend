@@ -1,0 +1,20 @@
+config:
+  target: "http://localhost:5000"  # Change to your real API host
+  phases:
+    - duration: 30       # Run test for 30 seconds
+      arrivalRate: 1 
+  plugins:
+    cookie: {}
+scenarios:
+  - flow:
+     - post:
+        url: "/api/auth/login"
+        json: 
+           email: seek1@example.com
+           password: seek123
+     - get:
+          url: "/api/users/all"   # Replace with your endpoint
+      
+             
+
+     
